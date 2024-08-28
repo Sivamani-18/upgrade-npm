@@ -20,6 +20,17 @@ Run the following command to update all dependencies except Apostrophe:
 ncu -u --target latest --reject apostrophe
 ```
 
+Option 1: Using multiple --reject flags
+
+```bash
+ncu -u --target latest --reject apostrophe --reject lodash --reject moment
+```
+Option 2: Using a comma-separated list
+
+```bash
+ncu -u --target latest --reject "apostrophe,lodash,moment"
+```
+
 This command updates the `package.json` file, upgrading all packages except for `apostrophe`.
 
 ### 4. **Install Updated Dependencies**
