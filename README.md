@@ -1,4 +1,4 @@
-To upgrade all the dependencies in your `package.json` file except for npm library, you can follow these steps:
+## To upgrade all the dependencies in your `package.json` file except for npm library, you can follow these steps:
 
 ### 1. **Update the `package.json` File**
 
