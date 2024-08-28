@@ -92,7 +92,7 @@ Here’s an example of how your updated `package.json` might look after this pro
 }
 ```
 
-
+---
 
 ## To check for package updates based on a specific Node.js version, you can use the `--enginesNode` flag.
 This flag will ensure that the packages you update are compatible with the Node.js version specified in your `package.json`.
