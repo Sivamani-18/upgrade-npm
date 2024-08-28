@@ -91,3 +91,45 @@ Here’s an example of how your updated `package.json` might look after this pro
   }
 }
 ```
+
+
+
+## To check for package updates based on a specific Node.js version, you can use the `--enginesNode` flag.
+This flag will ensure that the packages you update are compatible with the Node.js version specified in your `package.json`.
+
+Here’s how you can do it:
+
+### 1. **Set the Node Version in `package.json`**
+
+First, make sure your `package.json` has the `engines` field specifying the Node.js version:
+
+```json
+{
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
+```
+
+###  2. First, ensure that `npm-check-updates` is installed globally:
+   ```bash
+   npm install -g npm-check-updates
+   ```
+
+###  3. Next, update your dependencies to the latest versions, but reject updating `apostrophe`:
+   ```bash
+   ncu -u --target latest --reject apostrophe
+   ```
+
+### 4. Finally, update your dependencies while respecting the Node.js version specified in your `engines` field:
+   ```bash
+   ncu -u --enginesNode
+   ```
+
+### 5. Install Updated Dependencies
+
+After updating the `package.json`, install the dependencies:
+
+```bash
+npm install
+```
