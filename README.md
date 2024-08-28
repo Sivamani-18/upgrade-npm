@@ -46,14 +46,13 @@ npm install
 After updating, test your application to ensure that everything works as expected. Some packages might have breaking changes, so make sure to review the changelogs of the updated packages.
 
 ### 6. **Final `package.json`**
-
-Here’s an example of how your updated `package.json` might look after this process, with the Apostrophe version remaining the same:
+Here’s an example of how your `package.json` might look before this process
 
 ```json
 {
   "name": "example",
   "version": "2.0.0",
-  "description": "",
+  "description": "Boilerplate",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -66,7 +65,64 @@ Here’s an example of how your updated `package.json` might look after this pro
   "author": "P'unk Avenue",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.227.9",
+    "apostrophe": "^2.47.0",
+    "atob": "^2.1.2",
+    "bunyan": "^1.8.13",
+    "dotenv": "^8.2.0",
+    "gulp-uglifycss": "^1.1.0",
+    "html-pdf-node": "^1.0.7",
+    "lodash": "^4.17.21",
+    "moment": "^2.24.0",
+    "nodemon": "^2.0.4"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      "lib/modules/*/public/js/*.js",
+      "locales/*.json",
+      "public/modules/**/*.less",
+      "public/modules/**/*.js",
+      "public/uploads",
+      "public/apos-minified/*.js",
+      "public/css/master-*.less",
+      "data"
+    ],
+    "ext": "json, js, html, less"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.5.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
+
+```
+
+Here’s an example of how your updated `package.json` might look after this process, with the Apostrophe version remaining the same:
+
+```json
+{
+  "name": "example",
+  "version": "2.0.0",
+  "description": "Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "gens": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "P'unk Avenue",
+  "license": "MIT",
+  "dependencies": {
+    "apostrophe": "^2.47.0",
     "atob": "^2.1.2",
     "bunyan": "^1.8.13",
     "dotenv": "^16.0.0",
